@@ -65,7 +65,7 @@ class GoogleSheets:
         """Reads balance from a Google Sheet."""
         try: 
             today = datetime.now()
-            combined = f"Current mouth: {today.strftime("%B")}\nMonthly budget | Monthly expense | Monthly left \n"
+            combined = f"Current month: {today.strftime('%B')}\nMonthly budget | Monthly expense | Monthly left \n"
             sheet = self.service.spreadsheets()
             range_names = ["'Compute (2025)'!A:A", "'Compute (2025)'!C:C", "'Compute (2025)'!D:D", "'Compute (2025)'!E:E"]
             result = (

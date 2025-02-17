@@ -26,7 +26,7 @@ def format_input(message):
     # Map single-letter shortcuts to full categories
     category_map = {
         'f': 'food',
-        'b': 'bills',
+        'b': 'BSF',
         't': 'transport',
         'o': 'others',
         'e': 'entertainment',
