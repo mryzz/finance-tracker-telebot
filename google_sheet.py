@@ -6,7 +6,7 @@ from googleapiclient.errors import HttpError
 from datetime import datetime
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
-SPREADSHEET_ID = "13FHli56sdt1pWQ-wApkF6P2foeGZnC_IPcfpA72HGpU"
+SPREADSHEET_ID = os.getenv("GOOGLE_SHEET_SECRET")
 
 
 class GoogleSheets:
