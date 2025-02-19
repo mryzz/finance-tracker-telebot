@@ -7,6 +7,7 @@ import telebot
 # Setup environment variables and create bot object
 load_dotenv()
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
+CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 bot = telebot.TeleBot(BOT_TOKEN)
 user_states = {} 
 
@@ -119,7 +120,16 @@ else:
     def handle_message(message):
         bot.reply_to(message, "Send /login to your google sheet account first.")
 
+def notify_start():
+    if CHAT_ID:
+        bot.send_message(CHAT_ID, "🚀 GitHub Actions started running the bot at 12 PM!")
+    else:
+        print("❌ ERROR: TELEGRAM_CHAT_ID not set.")
+
+
 # Start bot
-print("Bot is running...")
-bot.infinity_polling()
+if __name__ == "__main__":
+    notify_start()
+    print("Bot is running...")
+    bot.infinity_polling()
 
