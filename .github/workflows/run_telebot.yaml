@@ -24,4 +24,4 @@ jobs:
       - name: Run Telebot script
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        run: python bot.py
+        run: python main.py
