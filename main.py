@@ -7,7 +7,7 @@ import telebot
 # Setup environment variables and create bot object
 load_dotenv()
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
-CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 bot = telebot.TeleBot(BOT_TOKEN)
 user_states = {} 
 
@@ -121,6 +121,7 @@ else:
         bot.reply_to(message, "Send /login to your google sheet account first.")
 
 def notify_start():
+    print(CHAT_ID)
     if CHAT_ID:
         bot.send_message(CHAT_ID, "🚀 GitHub Actions started running the bot at 12 PM!")
     else:

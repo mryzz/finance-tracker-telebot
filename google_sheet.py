@@ -6,7 +6,7 @@ from googleapiclient.errors import HttpError
 from datetime import datetime
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
-SPREADSHEET_ID = os.getenv("GOOGLE_SHEET_SECRET")
+SPREADSHEET_ID = "13FHli56sdt1pWQ-wApkF6P2foeGZnC_IPcfpA72HGpU"
 
 
 class GoogleSheets:
@@ -64,6 +64,7 @@ class GoogleSheets:
     def check_balance(self):
         """Reads balance from a Google Sheet."""
         try: 
+            print(SPREADSHEET_ID)
             today = datetime.now()
             combined = f"Current month: {today.strftime('%B')}\nMonthly budget | Monthly expense | Monthly left \n"
             sheet = self.service.spreadsheets()
