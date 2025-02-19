@@ -54,8 +54,12 @@ if google_sheets.service:
     @bot.message_handler(commands=['check'])
     def check_balance_message(message):
         balance = google_sheets.check_balance()
-        bot.reply_to(message, balance)
+        if balance:
+            bot.reply_to(message, str(balance))
+        else:
+            bot.reply_to(message, "⚠️ No balance information available.")
 
+    
     # Check detailed balance message handler
     @bot.message_handler(commands=['checkdetail'])
     def check_balance_details_message(message):
